@@ -80,7 +80,7 @@ const platform_module: Module<PlatformState, RootState> = {
                 // If End time is less than 2 weeks + 1 hour, remove from list they are no use
                 const threshold = DAY_MS * 14 + 10 * MINUTE_MS
                 if (dif <= threshold) {
-                    return false
+                    //return false
                 }
 
                 return true
@@ -139,7 +139,7 @@ const platform_module: Module<PlatformState, RootState> = {
             res = res.filter((v) => {
                 // Remove if remaining space is less than minimum
                 const min = state.minStakeDelegation
-                if (v.remainingStake.lt(min)) return false
+                //if (v.remainingStake.lt(min)) return false
                 return true
             })
 
