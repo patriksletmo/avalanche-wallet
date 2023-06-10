@@ -25,6 +25,7 @@ import TransportWebHID from '@ledgerhq/hw-transport-webhid'
 // @ts-ignore
 import Eth from '@ledgerhq/hw-app-eth'
 import Transport from '@ledgerhq/hw-transport'
+import TransportHttp from '@ledgerhq/hw-transport-http/lib/HttpTransport'
 
 import Spinner from '@/components/misc/Spinner.vue'
 import LedgerBlock from '@/components/modals/LedgerBlock.vue'
@@ -69,6 +70,13 @@ export default class LedgerButton extends Vue {
 
     async getTransport() {
         let transport
+
+        try {
+            transport = await TransportHttp.open('http://127.0.0.1:9998')
+            return transport
+        } catch (e) {
+            console.log('Failed to connect to Ledger proxy')
+        }
 
         try {
             transport = await TransportWebHID.create()

@@ -11,7 +11,8 @@
         "start": "node server/index.js",
         "test": "jest --verbose ./tests",
         "test:debug": "node --inspect-brk node_modules/.bin/jest ./tests --runInBand",
-        "test:watch": "jest --verbose --watch ./tests"
+        "test:watch": "jest --verbose --watch ./tests",
+        "postinstall": "patch-package"
     },
     "dependencies": {
         "@avalabs/avalanche-wallet-sdk": "0.20.0-alpha.11",
@@ -25,6 +26,7 @@
         "@fortawesome/vue-fontawesome": "0.1.9",
         "@ledgerhq/hw-app-eth": "6.29.7",
         "@ledgerhq/hw-transport": "6.27.5",
+        "@ledgerhq/hw-transport-http": "6.27.15",
         "@ledgerhq/hw-transport-u2f": "5.36.0-deprecated",
         "@ledgerhq/hw-transport-webhid": "5.51.1",
         "@ledgerhq/hw-transport-webusb": "5.51.1",
@@ -50,6 +52,7 @@
         "lodash.isequal": "4.5.0",
         "luxon": "1.25.0",
         "moment": "2.29.4",
+        "patch-package": "7.0.0",
         "posthog-js": "1.32.2",
         "print-js": "1.0.63",
         "punycode": "2.1.1",
