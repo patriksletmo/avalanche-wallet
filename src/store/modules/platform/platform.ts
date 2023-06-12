@@ -116,7 +116,7 @@ const platform_module: Module<PlatformState, RootState> = {
                 const delegatedStake = delegatedAmt.add(delegatedPendingAmt)
                 const validatorStake = new BN(v.stakeAmount)
                 // Calculate remaining stake
-                const absMaxStake = ONEAVAX.mul(new BN(3000000))
+                const absMaxStake = ONEAVAX.mul(new BN(50000000))
                 const relativeMaxStake = validatorStake.mul(new BN(5))
                 const stakeLimit = BN.min(absMaxStake, relativeMaxStake)
 
@@ -172,7 +172,7 @@ const platform_module: Module<PlatformState, RootState> = {
 
             // absolute max stake
             const mult = new BN(10).pow(new BN(6 + 9))
-            const absMaxStake = new BN(3).mul(mult)
+            const absMaxStake = new BN(50).mul(mult)
 
             if (relativeMaxStake.lt(absMaxStake)) {
                 return relativeMaxStake
